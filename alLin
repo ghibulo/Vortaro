@@ -1,0 +1,21 @@
+_vortaro:  malloko.o  sxlosiloj.o  vortaro.o  listo.o  kodado.o
+	gcc malloko.o sxlosiloj.o vortaro.o listo.o kodado.o -o _vortaro
+malloko.o: malloko.c
+	gcc malloko.c -c
+sxlosiloj.o: sxlosiloj.c
+	gcc sxlosiloj.c -c
+vortaro.o: vortaro.c
+	gcc vortaro.c -c
+listo.o: listo.c
+	gcc listo.c -c
+kodado.o: kodado.c
+	gcc kodado.c -c
+instali: _vortaro
+	./instvort.lin
+malinstali: malinstvort.lin
+	./malinstalivort.lin
+purigi: purigu.lin
+	./purigu.lin
+kompili: _vortaro
+
+

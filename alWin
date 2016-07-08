@@ -1,0 +1,19 @@
+_vortaro:  malloko.obj  sxlosiloj.obj  vortaro.obj  listo.obj  kodado.obj
+        cl -O2 -Fe_vortaro vortaro.obj malloko.obj sxlosiloj.obj listo.obj kodado.obj
+malloko.obj: malloko.c
+        cl -c malloko.c
+sxlosiloj.obj: sxlosiloj.c
+        cl -c sxlosiloj.c
+vortaro.obj: vortaro.c
+        cl -c vortaro.c
+listo.obj: listo.c
+        cl -c listo.c
+kodado.obj: kodado.c
+        cl -c kodado.c
+instali: _vortaro.exe
+        instvort.win.bat
+malinstali: malinstvort.win.bat
+        malinstvort.win.bat
+purigi: purigu.win.bat
+	purigu.win.bat
+kompili: _vortaro

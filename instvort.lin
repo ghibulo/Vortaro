@@ -1,0 +1,21 @@
+#! /bin/bash
+echo -n "Kie vi volas vortaro havi? Situo devas en parametro PATH esti. [/usr/bin] "
+read kie
+if [ -z $kie ]; then
+  kie="/usr/bin"
+fi
+mkdir $kie/vortdosiero
+cp ./_vortaro $kie/vortdosiero
+echo "#! /bin/bash" > $kie/vortaro
+echo "situo=\"$kie/vortdosiero/_vortaro\"" >> $kie/vortaro
+echo "\$situo \$*" >> $kie/vortaro
+chmod 0777 $kie/vortaro
+#malinstvort
+echo "#! /bin/bash" > malinstvort.lin
+echo "rm -rf $kie/vortdosiero/" >> malinstvort.lin
+echo "rm -f $kie/vortaro" >> malinstvort.lin
+chmod 0777 malinstvort.lin
+
+
+
+
